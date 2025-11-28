@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mariem Elleuch - Ingénieure en Génie Logiciel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Variables et styles de base */
+        :root {
+            --first-color: #3E3E3E;
+            --second-color: #2196F3;
+            --third-color: #FF5722;
+            --text-color: #333;
+            --bg-color: #FFF;
+            --light-bg: #F5F5F5;
+            --border-color: #E0E0E0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+        }
+
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--first-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--second-color);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--second-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #1976D2;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--first-color);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--second-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--second-color);
+        }
+
+        .nav-links a.active {
+            color: var(--second-color);
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--second-color);
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 10rem 2rem 5rem;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            display: flex;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--first-color);
+        }
+
+        .hero-text h1 span {
+            color: var(--second-color);
+        }
+
+        .hero-text h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+            font-weight: 400;
+        }
+
+        .hero-text p {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--second-color);
+            color: var(--second-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--second-color);
+            color: white;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-container {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--second-color) 0%, var(--third-color) 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+         .profile-image {
+            width: 340px;
+            height: 340px;
+            border-radius: 50%;
+            background-color: var(--light-bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .profile-image i {
+            opacity: 0.7;
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--light-bg);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--first-color);
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-item i {
+            color: var(--second-color);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Experience Section - STRUCTURE AMÉLIORÉE */
+        .experience-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .experience-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .experience-content {
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .experience-date {
+            display: inline-block;
+            background-color: var(--second-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
+            color: var(--first-color);
+        }
+
+        .experience-content h4 {
+            font-size: 1.3rem;
+            color: var(--second-color);
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .experience-content ul {
+            padding-left: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .experience-content li {
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+            font-size: 1.05rem;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tech-tag {
+            background-color: var(--light-bg);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            font-weight: 500;
+        }
+
+        /* SECTION MÉDIA AMÉLIORÉE */
+        .experience-media {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .media-container {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .media-container:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .media-container img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .media-container video {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .media-placeholder {
+            width: 100%;
+            height: 350px;
+            background: linear-gradient(135deg, var(--second-color) 0%, var(--third-color) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            border-radius: 12px;
+        }
+
+        .media-placeholder i {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .media-placeholder h4 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        /* Styles pour les vidéos en plein écran */
+        .video-fullscreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .video-fullscreen.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .video-fullscreen video {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+
+        .close-video {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.5);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .close-video:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+        }
+
+        /* Skills Section */
+        .skills {
+            background-color: var(--light-bg);
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .skill-category h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--first-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .skill-category h3 i {
+            margin-right: 10px;
+            color: var(--second-color);
+        }
+
+        .skill-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-item {
+            background-color: var(--light-bg);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover {
+            background-color: var(--second-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-image {
+            height: 200px;
+            background-color: var(--light-bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3rem;
+            color: var(--second-color);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--first-color);
+        }
+
+        .project-content p {
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-bottom: 1rem;
+        }
+
+        .tech-tag {
+            background-color: var(--light-bg);
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            color: var(--text-color);
+        }
+
+        /* Education Section */
+        .education {
+            background-color: var(--light-bg);
+        }
+
+        .education-timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .education-item {
+            display: flex;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .education-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--second-color);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .education-content {
+            flex: 1;
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .education-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--first-color);
+        }
+
+        .education-content h4 {
+            font-size: 1rem;
+            color: var(--second-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .education-content .date {
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--first-color);
+        }
+
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item i {
+            width: 40px;
+            height: 40px;
+            background-color: var(--second-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background-color: var(--light-bg);
+            color: var(--first-color);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            background-color: var(--second-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .contact-form {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--second-color);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--first-color);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo span {
+            color: var(--second-color);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links li {
+            margin: 0 1rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--second-color);
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .experience-item {
+                grid-template-columns: 1fr;
+            }
+            
+            .experience-media {
+                order: -1;
+                padding: 2rem;
+            }
+
+            .media-container {
+                max-width: 100%;
+            }
+
+            .media-container img,
+            .media-container video {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 1rem 0;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 0;
+                text-align: center;
+                padding: 0.8rem 0;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .experience-content {
+                padding: 2rem;
+            }
+
+            .experience-content h3 {
+                font-size: 1.5rem;
+            }
+
+            .experience-content h4 {
+                font-size: 1.1rem;
+            }
+
+            .media-container img,
+            .media-container video {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">Mariem<span>Elleuch</span></a>
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Accueil</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#experience">Expérience</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#education">Éducation</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Mariem <span>Elleuch</span></h1>
+                <h2>Étudiante ingénieure en Génie Logiciel et Informatique Décisionnelle</h2>
+                <p>Passionnée par les nouvelles technologies et en apprentissage du DevOps et de l'IoT, je suis ouverte à approfondir mes connaissances et à relever de nouveaux défis dans le domaine du développement logiciel.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn">Me contacter</a>
+                    <a href="#projects" class="btn btn-secondary">Voir mes projets</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="profile-container">
+                    <div class="profile-image">
+                        <img src="assets/img/mimo.png" alt="Mariem Elleuch" onerror="this.src='https://via.placeholder.com/340x340/2196F3/FFFFFF?text=ME'">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">À propos de moi</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="assets/img/mimo.png" alt="Mariem Elleuch" onerror="this.src='https://via.placeholder.com/400x500/2196F3/FFFFFF?text=Mariem+Elleuch'">
+                </div>
+                <div class="about-text">
+                    <h3>Ingénieure en Génie Logiciel</h3>
+                    <p> Je suis Mariem Elleuch, élève ingénieure en Génie Logiciel et Informatique Décisionnelle à l'IIT. Passionnée par les nouvelles technologies, j'explore et j'apprends chaque jour le DevOps, l'IoT, ainsi que les tendances modernes du développement logiciel. </p>
+                    <p> Motivée, curieuse et dynamique, je réalise des projets variés et modernes afin de devenir une ingénieure polyvalente, créative et innovante. Mon objectif est de mettre mes compétences en développement logiciel, bases de données, IA, et technologies émergentes au service de projets stimulants et à fort impact.</p>
+                    <p> Actuellement, je suis à la recherche d'un Projet de Fin d'Études (PFE) où je pourrai contribuer, apprendre et évoluer dans un environnement professionnel ambitieux.</p>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>elleuchmaryam26@gmail.com</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <span>50412593</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Sfax, Tunisie</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-language"></i>
+                            <span>Français, Anglais - Proficient</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section - STRUCTURE AMÉLIORÉE -->
+    <section class="experience" id="experience">
+        <div class="container">
+            <h2 class="section-title">Expériences Professionnelles</h2>
+            <div class="experience-grid">
+                <!-- Stage perfectionnement -->
+                <div class="experience-item">
+                    <div class="experience-content">
+                        <span class="experience-date">08/2025 – 09/2025</span>
+                        <h3>Stage perfectionnement</h3>
+                        <h4>Proxym, Sousse, Tunisie</h4>
+                        <ul>
+                            <li>Développement d'un backend de gestion de portefeuilles et paiements avec NestJS/PostgreSQL</li>
+                            <li>Modules Wallet, Paiement et conception d'API RESTful sécurisées</li>
+                            <li>Outils utilisés : Docker, Swagger, NestJS, PostgreSQL</li>
+                        </ul>
+                        <div class="tech-tags">
+                            <span class="tech-tag">NestJS</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">API REST</span>
+                            <span class="tech-tag">Swagger</span>
+                        </div>
+                    </div>
+                    <div class="experience-media">
+                        <div class="media-container">
+                            <img src="assets/img/wallet.png" alt="Application Wallet" onerror="this.src='https://via.placeholder.com/500x350/2196F3/FFFFFF?text=Application+Wallet'">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Stage professionnel -->
+                <div class="experience-item">
+                    <div class="experience-content">
+                        <span class="experience-date">06/2025 – 07/2025</span>
+                        <h3>Stage professionnel</h3>
+                        <h4>Formanet, Sfax, Tunisie</h4>
+                        <ul>
+                            <li>Développement d'applications web de gestion des produits</li>
+                            <li>Outils utilisés : Django, PostgreSQL, Laravel</li>
+                        </ul>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Laravel</span>
+                        </div>
+                    </div>
+                    <div class="experience-media">
+                        <div class="media-container">
+                            <img src="assets/img/optique.jpg" alt="Application Optique" onerror="this.src='https://via.placeholder.com/500x350/FF5722/FFFFFF?text=Application+Optique'">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Stage professionnel -->
+                <div class="experience-item">
+                    <div class="experience-content">
+                        <span class="experience-date">06/2024 – 07/2024</span>
+                        <h3>Stage professionnel</h3>
+                        <h4>Formanet, Sfax, Tunisie</h4>
+                        <ul>
+                            <li>Développement d'une application web reliant fermier et visiteurs</li>
+                            <li>Gestion des plantes, messagerie et espace personnalisé</li>
+                            <li>Outils utilisés : Laravel, VueJs</li>
+                        </ul>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Laravel</span>
+                            <span class="tech-tag">VueJs</span>
+                            <span class="tech-tag">MySQL</span>
+                        </div>
+                    </div>
+                    <div class="experience-media">
+                        <div class="media-container">
+                            <video controls poster="assets/img/visiteur_fermier_thumb.jpg">
+                                <source src="assets/img/visiteur_fermier.mp4" type="video/mp4">
+                                Votre navigateur ne supporte pas la lecture de vidéos.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projet de Fin d'Étude -->
+                <div class="experience-item">
+                    <div class="experience-content">
+                        <span class="experience-date">02/2023 – 06/2023</span>
+                        <h3>Projet de Fin d'Étude</h3>
+                        <h4>ZetaBox, Sfax, Tunisie</h4>
+                        <ul>
+                            <li>Développement d'une application web dédiée à l'avancement des employés</li>
+                            <li>Tableaux de bord distincts pour l'administrateur et les employés</li>
+                            <li>Outils utilisés : React, TailwindCSS, Strapi, API JIRA</li>
+                        </ul>
+                        <div class="tech-tags">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">TailwindCSS</span>
+                            <span class="tech-tag">Strapi</span>
+                            <span class="tech-tag">API JIRA</span>
+                        </div>
+                    </div>
+                    <div class="experience-media">
+                        <div class="media-container">
+                            <video controls poster="assets/img/pfe_thumb.jpg">
+                                <source src="assets/img/pfe.mp4" type="video/mp4">
+                                Votre navigateur ne supporte pas la lecture de vidéos.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2 class="section-title">Compétences</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Frameworks & Technologies</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">NestJS</span>
+                        <span class="skill-item">Django</span>
+                        <span class="skill-item">Spring Boot</span>
+                        <span class="skill-item">Laravel</span>
+                        <span class="skill-item">React</span>
+                        <span class="skill-item">VueJs</span>
+                        <span class="skill-item">Angular</span>
+                        <span class="skill-item">FastAPI</span>
+                        <span class="skill-item">.Net</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-database"></i> Bases de données</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">PostgreSQL</span>
+                        <span class="skill-item">MySQL</span>
+                        <span class="skill-item">Firebase</span>
+                        <span class="skill-item">SQLite</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-cloud"></i> DevOps</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">Docker</span>
+                        <span class="skill-item">GitLab CI/CD</span>
+                        <span class="skill-item">GitHub Actions</span>
+                        <span class="skill-item">Swagger</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-microchip"></i> IoT</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">Arduino</span>
+                        <span class="skill-item">Raspberry Pi</span>
+                        <span class="skill-item">Capteurs</span>
+                        <span class="skill-item">Mobiles connectées</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section-title">Projets</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-hotel"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Application Web de Gestion Hôtelière</h3>
+                        <p>Conception et développement d'une plateforme de gestion hôtelière basée sur une architecture RESTful.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Angular</span>
+                            <span class="tech-tag">Laravel</span>
+                            <span class="tech-tag">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Système de diagnostic médical intelligent</h3>
+                        <p>Développement d'une application de gestion médicale avec FastAPI, intégrant trois modèles CNN pour la classification de la pneumonie, la détection des fractures osseuses et la segmentation des tumeurs cérébrales.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">Deep Learning</span>
+                            <span class="tech-tag">CNN</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Application Mobile Flutter</h3>
+                        <p>Quiz interactif avec gestion du score, des questions et modes clair/sombre.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">Dart</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Application Web de Gestion de Centre de Formation</h3>
+                        <p>Développement et conteneurisation d'une plateforme de gestion des études et formations.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Application Web de Gestion Immobilière</h3>
+                        <p>Plateforme complète de gestion immobilière avec interface moderne et fonctionnalités avancées.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Laravel</span>
+                            <span class="tech-tag">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education" id="education">
+        <div class="container">
+            <h2 class="section-title">Éducation</h2>
+            <div class="education-timeline">
+                <div class="education-item">
+                    <div class="education-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="education-content">
+                        <h3>Cycle Ingénieur en Génie Informatique</h3>
+                        <h4>Institut Internationale de Technologie de Sfax (IIT)</h4>
+                        <div class="date">09/2023 – présent</div>
+                        <p>Spécialisation en Génie Logiciel et Informatique Décisionnelle</p>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="education-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="education-content">
+                        <h3>Licence en Sciences d'Informatique</h3>
+                        <h4>Institut Supérieur de l'Informatique et Multimédia, Sfax</h4>
+                        <div class="date">2020 – 2023</div>
+                        <p>Formation fondamentale en informatique et développement logiciel</p>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="education-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <div class="education-content">
+                        <h3>Baccalauréat section Scientifique</h3>
+                        <h4>Lycée Tayeb Mhiri, Sfax</h4>
+                        <div class="date">2016 – 2020</div>
+                        <p>Diplôme de fin d'études secondaires avec mention</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contactez-moi</h3>
+                    <p>Je suis étudiante en Génie Logiciel et Informatique Décisionnelle, actuellement à la recherche d'un stage PFE pour 2025. Je serais ravie d'échanger sur une opportunité, un projet ou une collaboration. Votre message est le bienvenu.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>elleuchmaryam26@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Téléphone</h4>
+                                <p>50412593</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Localisation</h4>
+                                <p>Sfax, Tunisie</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://github.com/MaryamElleuch" class="social-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/mariem-elleuch-5670ab360" class="social-link" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+           
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Mariem<span>Elleuch</span></div>
+            <ul class="footer-links">
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#experience">Expérience</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#education">Éducation</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <p class="copyright">© 2023 Mariem Elleuch. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Merci pour votre message! Je vous répondrai dès que possible.');
+            this.reset();
+        });
+        
+        // Active nav link on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.padding = '0.5rem 0';
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.padding = '1rem 0';
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
+            }
+        });
+    </script>
+</body>
+</html>
