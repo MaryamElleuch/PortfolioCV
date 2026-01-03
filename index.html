@@ -808,6 +808,27 @@
             font-size: 0.9rem;
             color: rgba(255, 255, 255, 0.7);
         }
+        .project-media{
+  width: 100%;
+  height: 220px;              /* change à 240px si tu veux plus grand */
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;           /* fond propre pour vidéo */
+  margin-bottom: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.project-media .media-el{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;          /* IMPORTANT: pas d'image étirée */
+  display: block;
+}
+
+/* meilleure adaptation mobile */
+@media (max-width: 768px){
+  .project-media{ height: 200px; }
+}
 
         /* Responsive Design */
         @media (max-width: 992px) {
@@ -932,7 +953,7 @@
             <div class="hero-image">
                 <div class="profile-container">
                     <div class="profile-image">
-                        <img src="assets/img/mimo.png" alt="Mariem Elleuch" onerror="this.src='https://via.placeholder.com/340x340/2196F3/FFFFFF?text=ME'">
+                        <img src="assets/img/maryam.jpg" alt="Mariem Elleuch" onerror="this.src='https://via.placeholder.com/340x340/2196F3/FFFFFF?text=ME'">
                     </div>
                 </div>
             </div>
@@ -945,7 +966,7 @@
             <h2 class="section-title">À propos de moi</h2>
             <div class="about-content">
                 <div class="about-image">
-                    <img src="assets/img/mimo.png" alt="Mariem Elleuch" onerror="this.src='https://via.placeholder.com/400x500/2196F3/FFFFFF?text=Mariem+Elleuch'">
+                    <img src="assets/img/maryam.jpg" alt="Mariem Elleuch" onerror="this.src='https://via.placeholder.com/400x500/2196F3/FFFFFF?text=Mariem+Elleuch'">
                 </div>
                 <div class="about-text">
                     <h3>Ingénieure en Génie Logiciel</h3>
@@ -1049,7 +1070,7 @@
                     <div class="experience-media">
                         <div class="media-container">
                             <video controls poster="assets/img/visiteur_fermier_thumb.jpg">
-                                <source src="assets/img/visiteur_fermier.mp4" type="video/mp4">
+                                <source src="assets/img/visiteur_fermier .mp4" type="video/mp4">
                                 Votre navigateur ne supporte pas la lecture de vidéos.
                             </video>
                         </div>
@@ -1125,6 +1146,15 @@
                         <span class="skill-item">Swagger</span>
                     </div>
                 </div>
+                 <div class="skill-category">
+                    <h3><i class="fas fa-asl-interpreting"></i> IA / DeepLearning </h3>
+                    <div class="skill-items">
+                        <span class="skill-item">TensorFlow </span>
+                        <span class="skill-item">YOLO</span>
+                        <span class="skill-item">CNN</span>
+                       
+                    </div>
+                </div>
                 <div class="skill-category">
                     <h3><i class="fas fa-microchip"></i> IoT</h3>
                     <div class="skill-items">
@@ -1139,143 +1169,195 @@
     </section>
 
     <!-- Projects Section -->
-    
 <section class="projects" id="projects">
-    <div class="container">
-        <h2 class="section-title">Projets</h2>
-        <div class="projects-grid">
+  <div class="container">
+    <h2 class="section-title">Projets</h2>
 
-            <!-- Projet 1 -->
-            <div class="project-card">
-                <div class="project-image">
-                    <i class="fas fa-hotel"></i>
-                </div>
-                <div class="project-content">
-                    <h3>Application Web de Gestion Hôtelière</h3>
-                    <p>Développement d’une plateforme complète permettant la gestion des réservations, chambres, clients et factures, avec une architecture RESTful et une interface intuitive.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Angular</span>
-                        <span class="tech-tag">Laravel</span>
-                        <span class="tech-tag">MySQL</span>
-                    </div>
-                </div>
-            </div>
+    <div class="projects-grid">
 
-            <!-- Projet 2 -->
-            <div class="project-card">
-                <div class="project-image">
-                    <i class="fas fa-stethoscope"></i>
-                </div>
-                <div class="project-content">
-                    <h3>Système de Diagnostic Médical Intelligent</h3>
-                    <p>Conception d’une application médicale basée sur FastAPI intégrant trois modèles CNN pour : la classification de la pneumonie, la détection des fractures osseuses et la segmentation des tumeurs cérébrales.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">TensorFlow</span>
-                        <span class="tech-tag">Deep Learning</span>
-                        <span class="tech-tag">CNN</span>
-                    </div>
-                </div>
-            </div>
+      <!-- Projet 1 -->
+      <div class="project-card">
+        <div class="project-content">
+<div class="project-media">
+            <video class="media-el" controls muted playsinline
+                   poster="assets/img/_thumb.jpg"
+                   controlsList="nodownload noplaybackrate noremoteplayback">
+              <source src="assets/img/Agence_Hotels.mp4" type="video/mp4">
+              Votre navigateur ne supporte pas la lecture de vidéos.
+            </video>
+          </div>
 
-            <!-- Projet 3 -->
-            <div class="project-card">
-                <div class="project-image">
-                    <i class="fas fa-mobile-alt"></i>
-                </div>
-                <div class="project-content">
-                    <h3>Application Mobile Flutter</h3>
-                    <p>Réalisation d’un quiz interactif avec gestion du score, génération dynamique de questions et support du mode clair/sombre.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Flutter</span>
-                        <span class="tech-tag">Dart</span>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Projet 4 -->
-            <div class="project-card">
-                <div class="project-image">
-                    <i class="fas fa-graduation-cap"></i>
-                </div>
-                <div class="project-content">
-                    <h3>Application de Gestion de Centre de Formation</h3>
-                    <p>Développement et conteneurisation d’une plateforme de gestion des formations, des apprenants et des plannings avec un déploiement Docker.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Spring Boot</span>
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">Docker</span>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Projet 5 -->
-            <div class="project-card">
-                <div class="project-image">
-                    <i class="fas fa-building"></i>
-                </div>
-                <div class="project-content">
-                    <h3>Plateforme de Gestion Immobilière</h3>
-                    <p>Application web moderne dédiée à la gestion des biens, contrats, loyers et clients, avec une interface ergonomique et des fonctionnalités avancées.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">Laravel</span>
-                        <span class="tech-tag">MySQL</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Nouveau Projet 6 -->
-            <div class="project-card">
-                <div class="project-image">
-                    <i class="fas fa-prescription-bottle-alt"></i>
-                </div>
-                <div class="project-content">
-                    <h3>Système Web de Gestion Pharmaceutique</h3>
-                    <p>Développement d’un site destiné aux pharmaciens pour la gestion des stocks, commandes et  médicaments  avec une architecture moderne .NET + React.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">.NET</span>
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">SQL Server</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Nouveau Projet 7 -->
-            <div class="project-card">
-                <div class="project-image">
-                    <i class="fas fa-city"></i>
-                </div>
-                <div class="project-content">
-                    <h3>Plateforme Immobilière Avancée</h3>
-                    <p>Création d’un système complet de gestion immobilière (annonces, propriétaires, locations, paiements) avec un backend Laravel, un frontend AngularJS et une base SQL optimisée.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">AngularJS</span>
-                        <span class="tech-tag">Laravel</span>
-                        <span class="tech-tag">SQL</span>
-                    </div>
-                </div>
-            </div>
-                        <!-- Projet 8 -->
-            <div class="project-card">
-                <div class="project-image">
-                    <i class="fas fa-mobile-alt"></i>
-                </div>
-                <div class="project-content">
-                    <h3>Application Mobile React Native</h3>
-                    <p> Application mobile de commande de café : conception d’une app intuitive permettant la sélection, la personnalisation des boissons, la gestion du panier et le paiement.</p>
-                    <div class="project-tech">
-                        
-                        <span class="tech-tag">React Native </span>
-                        
-                    </div>
-                </div>
-            </div>
-
+          <h3>Application Web de Gestion Hôtelière</h3>
+          <p>Plateforme complète pour la gestion des réservations, chambres, clients et factures (RESTful).</p>
+          <div class="project-tech">
+            <span class="tech-tag">Angular</span>
+            <span class="tech-tag">Laravel</span>
+            <span class="tech-tag">MySQL</span>
+          </div>
 
         </div>
+      </div>
+
+      <!-- Projet 2 -->
+      <div class="project-card">
+        <div class="project-content">
+
+          <div class="project-media">
+            <img class="media-el"
+                 src="assets/img/IA.png"
+                 alt="IA"
+                 onerror="this.src='https://via.placeholder.com/800x450/2196F3/FFFFFF?text=IA'">
+          </div>
+
+          <h3>Système de Diagnostic Médical Intelligent</h3>
+          <p>FastAPI + 3 modèles CNN : pneumonie, fractures, segmentation de tumeurs.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">TensorFlow</span>
+            <span class="tech-tag">Deep Learning</span>
+            <span class="tech-tag">CNN</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Projet 3 ✅ (corrigé: project-card manquait) -->
+      <div class="project-card">
+        <div class="project-content">
+
+          <div class="project-media">
+            <img class="media-el"
+                 src="assets/img/qcm.jpg"
+                 alt="QCM interactif"
+                 onerror="this.src='https://via.placeholder.com/800x450/2196F3/FFFFFF?text=QCM'">
+          </div>
+
+          <h3>Application Mobile Flutter</h3>
+          <p>Quiz interactif : score, génération de questions, mode clair/sombre.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Flutter</span>
+            <span class="tech-tag">Dart</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Projet 4 (sans image/vidéo => placeholder propre) -->
+      <div class="project-card">
+        <div class="project-content">
+
+          <div class="project-media">
+            <img class="media-el"
+                 src="assets/img/formation_center.jpg"
+                 alt="Gestion centre de formation"
+                 onerror="this.src='https://via.placeholder.com/800x450/2196F3/FFFFFF?text=Centre+de+Formation'">
+          </div>
+
+          <h3>Application de Gestion de Centre de Formation</h3>
+          <p>Plateforme de gestion des formations, des apprenants et des plannings + déploiement Docker.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Spring Boot</span>
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Docker</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Projet 5 -->
+      <div class="project-card">
+        <div class="project-content">
+
+          <div class="project-media">
+            <img class="media-el"
+                 src="assets/img/react.jpg"
+                 alt="Gestion immobilière"
+                 onerror="this.src='https://via.placeholder.com/800x450/2196F3/FFFFFF?text=Immobilier'">
+          </div>
+
+          <h3>Plateforme de Gestion Immobilière</h3>
+          <p>Gestion des biens, contrats, loyers et clients avec interface moderne.</p>
+          <div class="project-tech">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Laravel</span>
+            <span class="tech-tag">MySQL</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Projet 6 -->
+      <div class="project-card">
+        <div class="project-content">
+
+          <div class="project-media">
+            <img class="media-el"
+                 src="assets/img/PHARMAC.png"
+                 alt="Gestion pharmaceutique"
+                 onerror="this.src='https://via.placeholder.com/800x450/2196F3/FFFFFF?text=Pharmacie'">
+          </div>
+
+          <h3>Système Web de Gestion Pharmaceutique</h3>
+          <p>Gestion des stocks, commandes et médicaments (.NET + React).</p>
+          <div class="project-tech">
+            <span class="tech-tag">.NET</span>
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">SQL Server</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Projet 7 -->
+      <div class="project-card">
+        <div class="project-content">
+
+          <div class="project-media">
+            <img class="media-el"
+                 src="assets/img/immobiliere.jpg"
+                 alt="Plateforme immobilière"
+                 onerror="this.src='https://via.placeholder.com/800x450/2196F3/FFFFFF?text=Immobilier+Avance'">
+          </div>
+
+          <h3>Plateforme Immobilière Avancée</h3>
+          <p>Système complet (annonces, propriétaires, locations, paiements) Laravel + AngularJS.</p>
+          <div class="project-tech">
+            <span class="tech-tag">AngularJS</span>
+            <span class="tech-tag">Laravel</span>
+            <span class="tech-tag">SQL</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Projet 8 -->
+      <div class="project-card">
+        <div class="project-content">
+
+          <div class="project-media">
+            <video class="media-el" controls muted playsinline
+                   poster="assets/img/_thumb.jpg"
+                   controlsList="nodownload noplaybackrate noremoteplayback">
+              <source src="assets/img/coffe.mp4" type="video/mp4">
+              Votre navigateur ne supporte pas la lecture de vidéos.
+            </video>
+          </div>
+
+          <h3>Application Mobile React Native</h3>
+          <p>Commande de café : sélection, personnalisation, panier, paiement.</p>
+          <div class="project-tech">
+            <span class="tech-tag">React Native</span>
+          </div>
+
+        </div>
+      </div>
+
     </div>
+  </div>
 </section>
+
 
 
     <!-- Education Section -->
